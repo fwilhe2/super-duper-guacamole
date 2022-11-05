@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: add custom deb repository
+      uses: myci-actions/add-deb-repo@10
+      with:
+        repo: deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted
+        repo-name: sources
     - name: DoSomething
       run: |
         cat /etc/apt/sources.list
