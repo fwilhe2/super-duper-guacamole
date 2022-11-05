@@ -21,4 +21,4 @@ jobs:
         cat /etc/apt/sources.list.d/*
     - name: DoSomething
       run: |
-        sudo apt-get -y build-dep gnumeric
+        sudo apt update -y && sudo apt-get -y build-dep gnumeric
