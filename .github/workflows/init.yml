@@ -11,7 +11,7 @@ jobs:
     - name: add custom deb repository
       uses: myci-actions/add-deb-repo@10
       with:
-        repo: deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted
+        repo: deb-src http://azure.archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
         repo-name: sources
     - name: DoSomething
       run: |
@@ -21,4 +21,4 @@ jobs:
         cat /etc/apt/sources.list.d/*
     - name: DoSomething
       run: |
-        sudo apt update -y && sudo apt-get -y build-dep gnumeric
+        sudo apt-get update -y && sudo apt-get -y build-dep gnumeric
